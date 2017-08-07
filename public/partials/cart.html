@@ -1,0 +1,40 @@
+<div class="container margin-top-70">
+    <div class="page-header" ng-show="loggedIn">
+        <div class="row">
+            <div class="col-md-6">
+                <span><h3 class="inline">{{user.name.firstName}}, Your Cart</h3></span>
+            </div>
+            <div class="col-md-6">
+                <div class="pull-right" ng-if="products.length">
+                    <button class="btn btn-default green no-border margin-h3">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main_content" ng-cloak>
+        <ul class="cart">
+            <li class="cart-item" ng-repeat="product in products">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img class="small-img" src="{{product.thumbnail}}" width="70px" height="70px">
+                    </div>
+                    <div class="col-md-8">
+                        <div><a href="" ng-click="goto('/product/' + product.pnumber)">{{product.name}}</a></div>
+                        <div ng-if="product.quantity">Quantity : {{product.quantity}}</div>
+
+                    </div>
+                    <div class=" col-md-3 ">
+                        <b>{{product.price * product.quantity | currency:'&#8377; '}}</b>
+                        <div><a href='' ng-click="remove(product.pnumber) ">Remove</a></div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <div class="text-center " ng-if="!products.length ">
+            <h3 class="inline ">Your Cart is Empty ! Add some <a href='#/'>products</a></h3>
+
+        </div>
+
+    </div>
+</div>

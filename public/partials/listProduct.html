@@ -1,0 +1,33 @@
+<div class="container margin-top-50">
+    <div class="page-header">
+        <h3>List of Products</h3>
+    </div>
+
+    <div class="main_content">
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Currency</th>
+                <th>Available</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="product in products">
+                <td ng-bind="product.name" ng-click="goto('product/'+product.pnumber)" class="pointer"></td>
+                <td ng-bind="product.make"></td>
+                <td ng-bind="product.model"></td>
+                <td ng-bind="product.price"></td>
+                <td ng-bind="product.currency"></td>
+                <td ng-bind="product.availableCnt"></td>
+                <!--<td ng-click="edit(product._id)"><i class="glyphicon glyphicon-pencil"></i></td>-->
+                <td ng-click="delete(product.pnumber)">
+
+                    <i class="glyphicon glyphicon-trash"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="col-md-4 col-md-offset-4 margin-top-xl">
+    <h1>Login</h1>
+    <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+    <form class="form" ng-submit="login()">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username" ng-model="loginForm.username" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <label class="pull-right"><a href="#/">Forgot Password ? </a></label>
+            
+            <input type="password" class="form-control" name="password" ng-model="loginForm.password" required>
+        </div>
+        <div class="form-group ">
+            <button type="submit" class="btn btn-default" ng-disabled="disabled">Login</button>
+            Dont have an account ? <a href="#/register">Signup</a>
+
+        </div>
+    </form>
+    <hr ng-show="fbLoginEnable">
+
+    <form class="form" ng-submit="loginWithFB()" ng-show="fbLoginEnable">
+        <div class="form-group text-center" s>
+            <button type="button" class="btn btn-default" ng-disabled="disabled">Login with facebook</button>
+        </div>
+
+    </form>
+</div>

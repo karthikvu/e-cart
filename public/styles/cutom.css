@@ -1,0 +1,336 @@
+.padding-top-xl {
+    padding-top: 30px;
+}
+
+.margin-top-xl {
+    margin-top: 10%;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.floating-menu {
+    width: 50px;
+    height: 50px;
+    background-color: #d4d4d4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 111;
+}
+
+.floating-menu:hover {
+    opacity: 1;
+}
+
+header {
+    widows: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 4px 11px 0px #d6d6d6;
+    z-index: 1;
+}
+
+.header-1 {
+    margin-top: 15px;
+}
+
+.margin-top-70 {
+    margin-top: 70px;
+}
+
+.padding-sm {
+    padding: 8px;
+}
+
+.navbar-custom {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.menu-item {
+    padding: 10px;
+    padding-right: 0px;
+    cursor: 10px;
+    margin-left: 0px;
+}
+
+.menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    margin-left: 0px !important;
+}
+
+
+/* Needed for hiding crollbars when pushing */
+
+html {
+    overflow-x: hidden;
+}
+
+.ng-pageslide {
+    background: #009688;
+    color: white !important;
+}
+
+body.ng-pageslide-body-open::before {
+    content: '.';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.5;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    opacity: 0.5;
+    pointer-events: all;
+}
+
+body.ng-pageslide-body-closed::before {
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    content: '.';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#container1,
+#container2 {
+    width: 100%;
+    height: 20rem;
+    border: 1px solid lightGrey;
+    p {
+        font-size: 0.5rem!important;
+    }
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.menu-icon {
+    display: inline-block;
+    right: 15px;
+    position: absolute;
+}
+
+li.active.menu-item {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+
+/**/
+
+.p-l-70 {
+    padding-left: 70px;
+}
+
+.title {
+    font-size: large;
+    margin-top: -2px;
+}
+
+.logo {
+    vertical-align: middle;
+    top: -5px;
+    position: relative;
+}
+
+.product-name {}
+
+.thumbail {
+    margin-bottom: 40px;
+    padding: 5px;
+    text-align: center;
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.product {
+    box-shadow: 0px 0px 8px 0px #9a9a9a;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.product:hover {
+    box-shadow: 1px 0px 15px 2px #9a9a9a;
+}
+
+.product-desc {
+    color: #bfbfbf;
+    font-size: 11px;
+    line-height: 12px;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.product-name-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.product-name-link:hover {
+    text-decoration: none;
+}
+
+.height-20 {
+    height: 25px;
+    display: block;
+}
+
+.product-thumbnail {
+    max-width: 200px;
+    max-height: 200px;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.view-product-image {
+    height: 400px;
+    border: 1px solid #e3e3e3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.m-t-sm {
+    margin-top: 10px;
+}
+
+.m-t-md {
+    margin-top: 15px;
+}
+
+.m-t-lg {
+    margin-top: 20px;
+}
+
+.m-b-lg {
+    margin-bottom: 20px;
+}
+
+.m-t-xl {
+    margin-top: 30px;
+}
+
+.m-b-xl {
+    margin-bottom: 30px;
+}
+
+.green {
+    background-color: #388e3c !important;
+    color: white;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.margin-none {
+    margin: 0px !important;
+}
+
+.bigger {
+    font-size: 30px;
+}
+
+.rev-margin {
+    margin-left: -15px;
+}
+
+.prod-img {
+    max-height: 380px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.error-text {
+    color: red;
+}
+
+ul.cart {
+    list-style: none;
+}
+
+.cart-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.margin-h3 {
+    margin-top: 21px;
+}
+
+label {
+    display: block;
+}
+
+.cart-icon {
+    background-color: #e2e2e2;
+    padding: 10px;
+    border-radius: 50%;
+    margin: -8px;
+}
+
+a:hover,
+a:focus {
+    color: #6fccf8;
+    text-decoration: none;
+}
+
+text-decoration: none;
+
+}

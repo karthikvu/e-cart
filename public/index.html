@@ -1,0 +1,99 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Unibrain Softech Pvt. Ltd</title>
+    <!-- styles -->
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles/cutom.css" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png">
+</head>
+
+<body ng-controller="base" ng-cloak>
+
+    <header>
+        <div class="header-1">
+            <div class="col-md-7 p-l-70 col-sm-3 col-xs-3 pointer" ng-click="goto('/')">
+                <img src="images/favicon.png" height="30px" class="logo">
+                <span class="title hidden-xs" ng-bind="org_name"></span>
+            </div>
+            <div class="col-md-5 col-sm-9" ng-show="loggedIn">
+
+                <div class="col-md-6 text-right">
+                    <div class="pointer" ng-click="goto('cart')">
+                        <div class="glyphicon glyphicon-shopping-cart cart-icon" ng-class="{ 'green' : user.cart.length }"></div>
+                        <!--<div class="badge" ng-show="user.cart.length"> {{user.cart.length}}</div>-->
+                    </div>
+                </div>
+                <div class="col-md-5 visible-md visible-sm visible-lg visible-xl">
+
+                    <i class="glyphicon glyphicon-user" style="font-size: 1em;"></i> &nbsp;
+                    <a ng-click="goto('profile')" href="" ng-bind="$root.user.name.firstName + ' '+ user.name.lastName"></a> |
+                    <span ng-controller="logoutController">
+                    <a href="#" ng-click='logout()'>
+                         <i class=" glyphicon glyphicon-log-out" style="font-size: 1em;"></i> &nbsp; logout
+                    </a>
+                </span>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+            <div class="col-md-4 col-sm-9" ng-show="!loggedIn && showLoginButton">
+                <div class="col-md-1"></div>
+                <div class="col-md-11 text-right">
+                    <a href="#/login">Login</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div ng-view></div>
+
+    <div ng-init="checked = false" ng-click="checked = !checked" class="floating-menu" ng-show="loggedIn">
+        <div ng-show="!checked" class="text-center padding-sm">
+            <i class="glyphicon glyphicon-menu-hamburger" style="font-size: 2em;"></i>
+        </div>
+        <div ng-show="checked" class="text-center padding-sm">
+            <i class="glyphicon glyphicon-menu-left" style="font-size: 2em;"></i>
+        </div>
+    </div>
+    <div pageslide ps-open="checked" ps-side="left" ps-push="true" ps-size="220px">
+        <div id="demo-right">
+            <div class="logo  margin-top-70">
+            </div>
+            <div class="menu">
+                <ul class="navbar-custom">
+                    <li class="menu-item" ng-click="goto('/');closeMenu();" ng-class="{active : activeMenu == '/'}">Dashboard</li>
+                    <li class="menu-item" ng-click="goto('orders');closeMenu();" ng-class="{active : activeMenu == 'orders'}">My Orders</li>
+                    <li class="menu-item" ng-click="goto('profile');closeMenu();" ng-class="{active : activeMenu == 'profile'}">Profile</li>
+                    <li class="menu-item" ng-click="goto('cart');closeMenu();" ng-class="{active : activeMenu == 'cart'}">My Cart</li>
+                    <li class="menu-item" ng-click="showProducts = !showProducts;" ng-if="user.admin"><span> Admin area</span>
+                        <div class="text-rigt menu-icon"><i class="glyphicon rotate" ng-class="{
+                               'glyphicon-chevron-down' : !showProducts,
+                               'glyphicon-chevron-up' : showProducts
+                       }"></i></div>
+                        <ul class="navbar-custom" ng-show="showProducts">
+                            <li class="menu-item" ng-click="goto('product/list');closeMenu();$event.stopPropagation();" ng-if="user.admin" ng-class="{active : activeMenu == 'product/list'}">List Products</li>
+                            <li class="menu-item" ng-click="goto('product/add');closeMenu();$event.stopPropagation();" ng-if="user.admin" ng-class="{active : activeMenu == 'product/add'}">Add Product</li>
+                            <li class="menu-item" ng-click="goto('users/add');closeMenu();$event.stopPropagation();" ng-if="user.admin" ng-class="{active : activeMenu == 'users/add'}">Add User</li>
+                            <li class="menu-item" ng-click="goto('users/list');closeMenu();$event.stopPropagation();" ng-if="user.admin" ng-class="{active : activeMenu == 'users/list'}">Users</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/services.js"></script>
+    <script src="./scripts/controllers.js"></script>
+    <script src="scripts/angular-pageslide-directive.js"></script>
+</body>
+
+</html>

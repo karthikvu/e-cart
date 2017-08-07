@@ -1,0 +1,36 @@
+<div class="container margin-top-70">
+    <div class="page-header" ng-show="loggedIn">
+        <h3>Welcome, {{user.name.firstName}}</h3>
+    </div>
+    <div class="main_content" ng-cloak>
+        <div class="filter-bar">
+
+        </div>
+        <div ng-repeat="product in products" class="col-md-3">
+            <div class="product" ng-click="goto('/product/'+product.pnumber)">
+                <div class="thumbail">
+                    <img src="{{product.thumbnail}}" class="product-thumbnail" width="100%">
+                </div>
+                <hr>
+                <div>
+                    <a class="product-name-link">
+                        <div class="product-name" ng-bind="product.name">
+                        </div>
+                    </a>
+                    <div>
+                        <span class="product-price" ng-bind="product.price | currency:'&#8377;' "></span>
+                        <small ng-bind="product.currency "></small>
+                    </div>
+                    <div>
+                        <small ng-bind=" product.make+ ' - ' + product.model "></small>
+                    </div><small class="height-20 ">
+                        <span class="product-desc " ng-bind="product.description | limitTo:70 "></span><span class="pruduct-desc " ng-if="product.description.length> 70">...</span>
+                        </small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
